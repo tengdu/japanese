@@ -17,31 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Try using Google's free TTS API for a high-quality voice
     const url = `https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ja&q=${encodeURIComponent(text)}`;
+    const audio = new Audio(url);
     
-    // Use fetch with 'no-referrer' to prevent Google from blocking the request (which causes the 404)
-    fetch(url, { referrerPolicy: 'no-referrer' })
-      .then(response => {
-        if (!response.ok) throw new Error("Network response was not ok");
-        return response.blob();
-      })
-      .then(blob => {
-        const objectUrl = URL.createObjectURL(blob);
-        const audio = new Audio(objectUrl);
-        audio.play().catch(e => {
-          throw e; // Pass to the outer catch if playback fails
-        });
-      })
-      .catch(e => {
-        // Fallback to browser's native offline TTS if network or playback fails
-        console.warn("Cloud TTS failed, falling back to native TTS", e);
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'ja-JP';
-        utterance.rate = 0.75;
-        if (preferredVoice) {
-          utterance.voice = preferredVoice;
-        }
-        speechSynthesis.speak(utterance);
-      });
+    audio.play().catch(e => {
+      // Fallback to browser's native offline TTS if network or playback fails
+      console.warn("Cloud TTS failed, falling back to native TTS", e);
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'ja-JP';
+      utterance.rate = 0.75;
+      if (preferredVoice) {
+        utterance.voice = preferredVoice;
+      }
+      speechSynthesis.speak(utterance);
+    });
   };
 
   // --- Navigation Logic ---
