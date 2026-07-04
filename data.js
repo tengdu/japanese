@@ -69,16 +69,49 @@ const katakanaData = [
 ];
 
 const vocabData = [
+  // Greetings & Basics
+  { japanese: 'おはようございます', romaji: 'Ohayou gozaimasu', english: 'Good morning' },
   { japanese: 'こんにちは', romaji: 'Konnichiwa', english: 'Hello / Good afternoon' },
+  { japanese: 'こんばんは', romaji: 'Konbanwa', english: 'Good evening' },
+  { japanese: 'おやすみなさい', romaji: 'Oyasuminasai', english: 'Good night' },
   { japanese: 'ありがとう', romaji: 'Arigatou', english: 'Thank you' },
-  { japanese: 'さようなら', romaji: 'Sayounara', english: 'Goodbye' },
+  { japanese: 'ありがとうございます', romaji: 'Arigatou gozaimasu', english: 'Thank you very much' },
+  { japanese: 'どういたしまして', romaji: 'Douitashimashite', english: 'You are welcome' },
+  { japanese: 'すみません', romaji: 'Sumimasen', english: 'Excuse me / I am sorry' },
+  { japanese: 'ごめんなさい', romaji: 'Gomen nasai', english: 'I am sorry' },
   { japanese: 'はい', romaji: 'Hai', english: 'Yes' },
   { japanese: 'いいえ', romaji: 'Iie', english: 'No' },
-  { japanese: 'すみません', romaji: 'Sumimasen', english: 'Excuse me / I am sorry' },
   { japanese: 'おねがいします', romaji: 'Onegaishimasu', english: 'Please' },
+  
+  // Daily Expressions
+  { japanese: 'いただきます', romaji: 'Itadakimasu', english: 'Let\'s eat (before eating)' },
+  { japanese: 'ごちそうさまでした', romaji: 'Gochisousama deshita', english: 'Thank you for the meal' },
+  { japanese: 'いってきます', romaji: 'Ittekimasu', english: 'I am leaving' },
+  { japanese: 'いってらっしゃい', romaji: 'Itterasshai', english: 'Have a good trip / Take care' },
+  { japanese: 'ただいま', romaji: 'Tadaima', english: 'I am home' },
+  { japanese: 'おかえりなさい', romaji: 'Okaerinasai', english: 'Welcome home' },
+  { japanese: 'おつかれさまでした', romaji: 'Otsukaresama deshita', english: 'Good work today' },
+  
+  // Useful Phrases
+  { japanese: 'わかりません', romaji: 'Wakarimasen', english: 'I do not understand' },
+  { japanese: 'わかりました', romaji: 'Wakarimashita', english: 'I understand' },
+  { japanese: 'もう一度お願いします', romaji: 'Mou ichido onegaishimasu', english: 'One more time, please' },
+  { japanese: 'ゆっくり話してください', romaji: 'Yukkuri hanashite kudasai', english: 'Please speak slowly' },
+  { japanese: '英語が話せますか', romaji: 'Eigo ga hanasemasu ka', english: 'Can you speak English?' },
+  { japanese: 'ちょっと待ってください', romaji: 'Chotto matte kudasai', english: 'Please wait a moment' },
+  { japanese: 'いくらですか', romaji: 'Ikura desu ka', english: 'How much is it?' },
+  { japanese: 'これをください', romaji: 'Kore o kudasai', english: 'I will take this one, please' },
+  { japanese: 'トイレはどこですか', romaji: 'Toire wa doko desu ka', english: 'Where is the restroom?' },
+  { japanese: '助けてください', romaji: 'Tasukete kudasai', english: 'Please help me' },
+  { japanese: '大丈夫です', romaji: 'Daijoubu desu', english: 'It is okay / I am fine' },
+  
+  // Adjectives
   { japanese: 'おいしい', romaji: 'Oishii', english: 'Delicious' },
   { japanese: 'かわいい', romaji: 'Kawaii', english: 'Cute' },
-  { japanese: 'すごい', romaji: 'Sugoi', english: 'Amazing / Great' }
+  { japanese: 'すごい', romaji: 'Sugoi', english: 'Amazing / Great' },
+  { japanese: 'やばい', romaji: 'Yabai', english: 'Crazy / Awesome / Oh no' },
+  { japanese: 'かっこいい', romaji: 'Kakkoii', english: 'Cool / Handsome' },
+  { japanese: 'きれい', romaji: 'Kirei', english: 'Beautiful / Clean' }
 ];
 
 const trainData = [

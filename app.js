@@ -197,7 +197,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 150);
   };
   
-  updateCard();
+  let cardHistory = [];
+  let historyIndex = -1;
+
+  const getRandomIndex = () => Math.floor(Math.random() * vocabData.length);
+
+  const loadRandomCard = () => {
+    const nextIndex = getRandomIndex();
+    cardHistory.push(nextIndex);
+    historyIndex = cardHistory.length - 1;
+    currentCardIndex = nextIndex;
+    updateCard();
+  };
+
+  const loadPrevCard = () => {
+    if (historyIndex > 0) {
+      historyIndex--;
+      currentCardIndex = cardHistory[historyIndex];
+      updateCard();
+    }
+  };
+
+  const loadNextCard = () => {
+    if (historyIndex < cardHistory.length - 1) {
+      historyIndex++;
+      currentCardIndex = cardHistory[historyIndex];
+      updateCard();
+    } else {
+      loadRandomCard();
+    }
+  };
+
+  // Initialize first card
+  loadRandomCard();
   
   flashcardElement.addEventListener('click', (e) => {
     if (e.target.closest('#btn-play-vocab')) return;
@@ -209,15 +241,8 @@ document.addEventListener('DOMContentLoaded', () => {
     playAudio(vocabData[currentCardIndex].japanese);
   });
   
-  document.getElementById('btn-next').addEventListener('click', () => {
-    currentCardIndex = (currentCardIndex + 1) % vocabData.length;
-    updateCard();
-  });
-  
-  document.getElementById('btn-prev').addEventListener('click', () => {
-    currentCardIndex = (currentCardIndex - 1 + vocabData.length) % vocabData.length;
-    updateCard();
-  });
+  document.getElementById('btn-next').addEventListener('click', loadNextCard);
+  document.getElementById('btn-prev').addEventListener('click', loadPrevCard);
 
   // --- Train Announcements Logic ---
   const trainContainer = document.getElementById('train-container');
