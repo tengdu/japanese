@@ -14,21 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const playAudio = (text) => {
     if (!text) return;
-    // Try using Google Translate's high-quality cloud TTS for clearer pronunciation
-    const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=ja&client=tw-ob`;
-    const audio = new Audio(url);
-    
-    audio.play().catch(e => {
-      // Fallback to browser's native offline TTS if network or playback fails
-      console.warn("Cloud TTS failed, falling back to native TTS", e);
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'ja-JP';
-      utterance.rate = 0.75; // Slowed down slightly for clarity
-      if (preferredVoice) {
-        utterance.voice = preferredVoice;
-      }
-      speechSynthesis.speak(utterance);
-    });
+    // Use browser's native offline TTS
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'ja-JP';
+    utterance.rate = 0.75; // Slowed down slightly for clarity
+    if (preferredVoice) {
+      utterance.voice = preferredVoice;
+    }
+    speechSynthesis.speak(utterance);
   };
 
   // --- Navigation Logic ---
