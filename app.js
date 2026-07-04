@@ -47,10 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Home Logic ---
-  document.getElementById('btn-start-daily').addEventListener('click', () => {
-    navItems[1].click();
-  });
+
 
   // --- Kana Trainer Logic ---
   const kanaGrid = document.getElementById('kana-grid-container');
