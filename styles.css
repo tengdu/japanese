@@ -554,3 +554,64 @@ body {
   font-size: 1rem;
   color: var(--text-main);
 }
+
+/* Dictionary Views */
+.dict-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.dict-group-header {
+  font-size: 1.5rem;
+  color: var(--primary-accent);
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.dict-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.dict-card {
+  background-color: var(--surface-color);
+  padding: 1.2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.05);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.dict-card:hover {
+  background-color: var(--surface-hover);
+  border-color: var(--primary-glow);
+  transform: translateY(-2px);
+}
+
+.dict-jp {
+  font-family: var(--font-jp);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.dict-romaji {
+  font-size: 0.85rem;
+  color: var(--primary-accent);
+  margin-bottom: 0.5rem;
+}
+
+.dict-en {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}

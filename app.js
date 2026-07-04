@@ -272,4 +272,66 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTrainData();
   }
 
+  // --- Dictionary Rendering Logic (N5 & N4) ---
+  const renderDictionary = (dataArray, containerId) => {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    // Group by first letter of romaji
+    const groups = {};
+    dataArray.forEach(item => {
+      if (!item.romaji) return;
+      const firstLetter = item.romaji.charAt(0).toUpperCase();
+      if (!groups[firstLetter]) groups[firstLetter] = [];
+      groups[firstLetter].push(item);
+    });
+
+    const sortedLetters = Object.keys(groups).sort();
+    
+    container.innerHTML = '';
+    
+    sortedLetters.forEach(letter => {
+      // Group Wrapper
+      const groupDiv = document.createElement('div');
+      groupDiv.className = 'dict-group';
+      
+      // Group Header
+      const header = document.createElement('div');
+      header.className = 'dict-group-header';
+      header.textContent = letter;
+      groupDiv.appendChild(header);
+      
+      // Grid for cards
+      const grid = document.createElement('div');
+      grid.className = 'dict-grid';
+      
+      groups[letter].forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'dict-card';
+        card.innerHTML = `
+          <div>
+            <div class="dict-jp">${item.japanese}</div>
+            <div class="dict-romaji">${item.romaji}</div>
+            <div class="dict-en">${item.english}</div>
+          </div>
+          <button class="btn-icon" title="Play Pronunciation">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+          </button>
+        `;
+        
+        card.addEventListener('click', () => {
+          playAudio(item.japanese);
+        });
+        
+        grid.appendChild(card);
+      });
+      
+      groupDiv.appendChild(grid);
+      container.appendChild(groupDiv);
+    });
+  };
+
+  if (typeof n5VocabData !== 'undefined') renderDictionary(n5VocabData, 'dict-n5-container');
+  if (typeof n4VocabData !== 'undefined') renderDictionary(n4VocabData, 'dict-n4-container');
+
 });
