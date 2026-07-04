@@ -500,3 +500,57 @@ body {
     font-size: 1.8rem;
   }
 }
+
+/* Train Announcements */
+.train-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.train-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--surface-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.train-row:hover {
+  background-color: var(--surface-hover);
+  transform: translateY(-2px);
+  border-color: rgba(244, 114, 182, 0.3);
+}
+
+.train-row:active {
+  transform: translateY(1px);
+}
+
+.train-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.train-jp {
+  font-family: var(--font-jp);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-accent);
+}
+
+.train-romaji {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.train-en {
+  font-size: 1rem;
+  color: var(--text-main);
+}

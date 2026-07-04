@@ -28,6 +28,10 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M7 7h10"></path><path d="M7 12h10"></path><path d="M7 17h10"></path></svg>
           Vocabulary SRS
         </div>
+        <div class="nav-item" data-view="train">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="16" rx="2"></rect><path d="M4 11h16"></path><path d="M12 3v8"></path><path d="M8 19l2-3"></path><path d="M16 19l-2-3"></path></svg>
+          Train Audio
+        </div>
       </nav>
     </aside>
 
@@ -91,6 +95,17 @@
             <button class="btn btn-secondary" id="btn-prev">Previous</button>
             <button class="btn btn-primary" id="btn-next">Next Card</button>
           </div>
+        </div>
+      </section>
+
+      <!-- Train Announcements View -->
+      <section id="view-train" class="view">
+        <div class="header">
+          <h1>Train Broadcasts (電車のアナウンス)</h1>
+          <p>Common sentences you will hear on Japanese trains. Click any to play the audio.</p>
+        </div>
+        <div class="train-container" id="train-container">
+          <!-- Populated by JS -->
         </div>
       </section>
 

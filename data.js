@@ -80,3 +80,16 @@ const vocabData = [
   { japanese: 'かわいい', romaji: 'Kawaii', english: 'Cute' },
   { japanese: 'すごい', romaji: 'Sugoi', english: 'Amazing / Great' }
 ];
+
+const trainData = [
+  { japanese: 'まもなく、1番線に、電車が参ります。', romaji: 'Mamonaku, ichibansen ni, densha ga mairimasu.', english: 'The train will soon arrive at track 1.' },
+  { japanese: '危ないですから、黄色い点字ブロックの内側までお下がりください。', romaji: 'Abunai desu kara, kiiroi tenji burokku no uchigawa made osagari kudasai.', english: 'For your safety, please stand behind the yellow tactile paving.' },
+  { japanese: 'この電車は、秋葉原、上野方面、山手線内回りです。', romaji: 'Kono densha wa, Akihabara, Ueno houmen, Yamanotesen uchimawari desu.', english: 'This train is for Akihabara and Ueno, on the Yamanote Line inner circle.' },
+  { japanese: '次は、東京、東京です。', romaji: 'Tsugi wa, Toukyou, Toukyou desu.', english: 'The next station is Tokyo, Tokyo.' },
+  { japanese: 'お出口は右側です。', romaji: 'Odeguchi wa migigawa desu.', english: 'The doors on the right side will open.' },
+  { japanese: '新幹線、東海道線、横須賀線はお乗り換えです。', romaji: 'Shinkansen, Toukaidousen, Yokosukasen wa onorikae desu.', english: 'Please change here for the Shinkansen, Tokaido Line, and Yokosuka Line.' },
+  { japanese: 'ドアが閉まります。ご注意ください。', romaji: 'Doa ga shimarimasu. Gochuui kudasai.', english: 'The doors are closing. Please be careful.' },
+  { japanese: '無理なご乗車はおやめください。', romaji: 'Muri na gojousha wa oyame kudasai.', english: 'Please do not rush onto the train.' },
+  { japanese: '本日も、JR東日本をご利用くださいまして、ありがとうございます。', romaji: 'Honjitsu mo, Jei-aaru Higashi-Nihon o goriyou kudasaimashite, arigatou gozaimasu.', english: 'Thank you for traveling with JR East today.' },
+  { japanese: '車内では、携帯電話をマナーモードに設定の上、通話はお控えください。', romaji: 'Shanai dewa, keitaidenwa o manaamoodo ni settei no ue, tsuuwa wa ohikae kudasai.', english: 'Please set your mobile phone to silent mode and refrain from talking on the phone.' }
+];
